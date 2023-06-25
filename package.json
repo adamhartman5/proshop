@@ -5,7 +5,10 @@
 	"type": "module",
 	"main": "server.js",
 	"scripts": {
-		"start": "node backend/server.js"
+		"start": "node backend/server.js",
+		"server": "nodemon backend/server.js",
+		"client": "npm start --prefix frontend",
+		"dev": "concurrently \"npm run server\" \"npm run client\""
 	},
 	"repository": {
 		"type": "git",
@@ -16,5 +19,9 @@
 	"bugs": {
 		"url": "https://github.com/adamhartman5/proshop/issues"
 	},
-	"homepage": "https://github.com/adamhartman5/proshop#readme"
+	"homepage": "https://github.com/adamhartman5/proshop#readme",
+	"devDependencies": {
+		"concurrently": "^8.2.0",
+		"nodemon": "^2.0.22"
+	}
 }
